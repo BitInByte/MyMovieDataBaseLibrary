@@ -28,7 +28,7 @@ export const renderLoader = (parent) => {
 
     const markup = `
         <div class="loader--container animate__animated animate__fadeIn">
-            <img src="/vendors/img/svg-loaders/three-dots.svg" alt="Loader" class="loader--loader">
+            <embed src="/vendors/img/svg-loaders/three-dots.svg" alt="Loader" class="loader--loader">
         </div>
         `;
 

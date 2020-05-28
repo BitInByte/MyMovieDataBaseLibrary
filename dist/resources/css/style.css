@@ -171,6 +171,7 @@ header form input {
     border: 0;
     color: #fafbfc;
     font-weight: 100;
+    font-size: 100%;
 }
 
 header form input:focus,
@@ -193,7 +194,7 @@ header form button i {
 
     color: #fafbfc;
     background-color: transparent !important;
-    font-size: 100%;
+    font-size: 200%;
 }
 
 .btn-watched-list {
