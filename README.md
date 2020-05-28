@@ -3,7 +3,7 @@
 ![Thumbnail](thumbnail.png)
 Thumbnail of the DataBase  
 ## Getting Started
-The database is made with a free API that you can find here: [OMDB API](http://www.omdbapi.com/) - The API used  
+The database is made with a free API that you can find here: [OMDB API](http://www.omdbapi.com/) - All credits on API to them.   
 ### Installing
   
 The project can be cloned and there's two steps to test the project and can be tested by yourself, with all of the changes that you want to do!  
