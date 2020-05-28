@@ -1,0 +1,385 @@
+
+
+/* Big tablet to 1200px (widths smaller than the 1140px row) */
+@media only screen and (max-width: 1200px) {
+
+ 
+    .movies-container {
+        margin: 0 auto;
+    }
+
+    .single-movie {
+        width: 25%;
+        margin: 105px auto;
+        display: block;
+        opacity: 1;
+        height: 210px;
+        /* font-size: 350%; */
+    }
+
+    .single-movie figure img {
+        /* height: 100%; */
+        height: 250px;
+        filter: grayscale(0) blur(0);
+        -webkit-filter: grayscale(0) blur(0);
+    }
+
+    .single-movie figure figcaption {
+        height: 120px;
+    }
+
+    .single-movie figure p {
+        height: 260px;
+    }
+
+    /* Single movie */
+
+.movie-content {
+    position: static;
+    display: block;
+    font-size: 200%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+}
+
+.movie-content--title h1 {
+    font-size: 110%;
+}
+
+.movie-content--img,
+.movie-content--content {
+    margin: 10px auto;
+    float: none;
+    width: 100%;
+    height: 500px;
+}
+
+.movie-content--img img {
+    object-fit: cover;
+}
+
+.movie-content--descr,
+.movie-content--info,
+.movie-content--stars,
+.movie-content--btn {
+    margin: 10px 0;
+}
+
+.movie-content--btn:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+    margin: 0;
+}
+
+.movie-content--descr {
+    padding: 0 40px;
+}
+
+.movie-content--descr p {
+    font-size: 80%;
+}
+
+.btn-back,
+.btn-imdb,
+.btn-watched {
+    height: auto;
+}
+    
+}
+
+
+/* Small tablets to big tablets: from 768px to 1023px */
+@media only screen and (max-width: 1023px) { /* Tablet in portrait mode */
+    .single-movie {
+        width: 25%;
+        margin: 65px auto;
+        display: block;
+        opacity: 1;
+    }
+
+    .single-movie figure img {
+        height: 200px;
+        filter: grayscale(0) blur(0);
+        -webkit-filter: grayscale(0) blur(0);
+    }
+
+    .single-movie figure p {
+        height: 210px;
+    }
+
+    /* Single movie */
+
+.movie-content {
+    position: static;
+    display: block;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    width: 100%;
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+}
+
+.movie-content--img,
+.movie-content--content {
+    margin: 10px auto;
+    float: none;
+    width: 100%;
+    height: 400px;
+}
+
+.movie-content--img img{
+    object-fit: cover;
+}
+
+.movie-content--descr,
+.movie-content--info,
+.movie-content--stars,
+.movie-content--btn {
+    margin: 10px 0;
+}
+
+.movie-content--btn:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+    margin: 0;
+}
+
+.movie-content--descr {
+    padding: 0 40px;
+}
+
+   
+}
+
+
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
+    .single-movie {
+        width: 80%;
+        margin: auto;
+        display: block;
+        float: none;
+        opacity: 1;
+    }
+
+    .single-movie figure img {
+        height: 300px;
+        filter: grayscale(0) blur(0);
+        -webkit-filter: grayscale(0) blur(0);
+    }
+
+    .single-movie figure p {
+        height: 300px;
+    }
+
+    /* Single movie */
+
+.movie-content {
+    position: static;
+    display: block;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    width: 100%;
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+}
+
+.movie-content--img,
+.movie-content--content {
+    margin: 10px auto;
+    float: none;
+    width: 100%;
+}
+
+.movie-content--descr,
+.movie-content--info,
+.movie-content--stars,
+.movie-content--btn {
+    margin: 10px 0;
+}
+
+.movie-content--btn:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+    margin: 0;
+}
+
+.movie-content--descr {
+    padding: 10px;
+}
+   
+
+
+}
+
+/* Small phones from 0 to 480px */
+@media only screen and (max-width: 480px) {
+
+    .logo {
+        
+        padding: 4px;
+        margin: 0 5px;
+        font-size: 1.2rem;
+
+        margin-top: 2px;
+    
+    }
+
+    header form {
+    width: 40%;
+
+    margin-top: 1px;
+
+    margin-left: 100px;
+
+    padding: 5px 15px;
+}
+
+header form button i {
+
+    font-size: 80%;
+}
+
+header form input {
+    width: 80%;
+}
+
+    .movies-container {
+        text-align: center;
+    }
+
+    .single-movie {
+        width: 80%;
+        height: auto;
+        margin: 5px auto;
+        display: block;
+        float: none;
+        opacity: 1;
+}
+
+.single-movie:first-child {
+    width: 80%;
+    height: auto;
+    margin-top: 35px;
+    display: block;
+    float: none;
+    opacity: 1;
+}
+
+.single-movie figure img {
+    filter: grayscale(0) blur(0);
+    -webkit-filter: grayscale(0) blur(0);
+}
+
+
+.btn{
+    width: 90px;
+    height: 30px;
+    font-size: 60%;
+    padding: 5px;
+}
+
+.btn-watched-list {
+    margin-right: 5px;
+}
+
+.pagination {
+    margin: 5px 0;
+}
+
+
+/* Single movie */
+
+.movie-content {
+    position: static;
+    display: block;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    width: 100%;
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+}
+
+.movie-content--img,
+.movie-content--content {
+    margin: 10px auto;
+    float: none;
+    max-width: 100%;
+    height: 400px;
+}
+
+.movie-content--img {
+    margin-top: 25px;
+}
+
+.movie-content--img img,
+.movie-content--img div {
+   object-fit: cover;
+}
+
+.movie-content--descr,
+.movie-content--info,
+.movie-content--stars,
+.movie-content--btn {
+    margin: 10px 0;
+}
+
+.movie-content--btn:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+    margin: 0;
+}
+
+.movie-content--descr {
+    padding: 10px;
+}
+
+.movie-content--title h1 {
+    font-size: 2rem;
+}
+
+.movie-content--descr p {
+    font-size: 40%;
+
+}
+
+.movie-content--info {
+    font-size: 50%;
+}
+
+.movie-content--stars {
+    font-size: 60%;
+}
+
+.movie-content--btn div {
+    font-size: 30%;
+}
+
+}
