@@ -20,12 +20,12 @@ Step 2: Buil the project to be ready to production
 npm run build  
 ```
   
-The command above need to be introduced on the root folder of the project.  
+The commands above need to be introduced on the root folder of the project.  
   
-The project need an api as well that you can get it free from the OMDB API. You just only need to change the api key on the models on the project.  
+The project need an API key as well that you can get it free from the OMDB API. You just only need to change the api key on the models on the project.  
   
 ## Specifications
-Project build in study case. This project was made to apply a bunch of new technologies learned on the last couple of weeks. In terms of layout, the project is following the same rules than the last project, it's without flexbox or grid, is used with only floating elements and other old tricks. This project was really challenging because, layouting withour flexbox or grid is really difficult. Beside that, this project is using multiple versions of the Vanilla JavaScript the opposite of the last project that I only used the ES5 version. Another feature used was nodeJs that was implemented the webpack to bundle all of the javascript files in just one file, babel to convert all of code that was wrote with features not supported in ES5 to ES5 features and polyfill to use the code that is impossible to be converted into ES5 code.  
+Project build in study case. This project was made to apply a bunch of new technologies learned on the last couple of weeks. In terms of layout, the project is following the same rules than the last project, it's without flexbox or grid, is used with only floating elements and other old tricks. This project was really challenging because, layouting without flexbox or grid is really hard. Beside that, this project is using multiple versions of the Vanilla JavaScript the opposite of the last project that I only used the ES5 version. Another feature used was node.js that was implemented the webpack to bundle all of the javascript files in just one file, babel to convert all of code that was wrote with features not supported in ES5 to ES5 features and polyfill to use the code that is impossible to be converted into ES5 code.  
 ## Built With
 - HTML
 - CSS3
