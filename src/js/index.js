@@ -18,12 +18,12 @@ import { elements, renderLoader, clearLoader, eventsList } from './views/base';
 
 // Objects container
 const state = {};
+// Debugging object state
 window.state = state;
 
 /*
 * SEARCH CONTROLLER
 */
-
 const controllerSearch = async (pagination = false) => {
 
     // Get the input from the form with a keyword to perform a search
@@ -43,11 +43,18 @@ const controllerSearch = async (pagination = false) => {
         searchView.clearInput();
         
         try {
+            // Async calling the class method getSeach from class Search - get the results from the API
             await state.search.getSearch();
+
+            // Clear the loader from the DOM
             clearLoader();
+
+            // Clear the last results from the DOM
             searchView.cleanResults();
+
+            // Render the results on the DOM
             searchView.renderResults(state.search);
-            // console.log(state.search);
+
         } catch (error) {
             console.log(error);
         }
@@ -57,19 +64,27 @@ const controllerSearch = async (pagination = false) => {
          // Clean the results to render the load
          searchView.cleanResults();
 
-        //  Render the load
+        //  Render the loader
         renderLoader(elements.searchRequest);
 
         try {
+            // Async calling the class method getSeach from class Search - get the results from the API
             await state.search.getSearch();
+
+            // Clear the loader from the DOM
             clearLoader();
+
+            // Clear the last results from the DOM
             searchView.cleanResults();
+
+            // Render the results on the DOM
             searchView.renderResults(state.search);
-            // console.log(state.search);
+
         } catch (error) {
             console.log(error);
         }
     } else {
+        // If the user doesn't insert nothing on the input box, a alert prompts to advise the user to insert a movie
         alert('Insert a movie on the search box!');
     }
 };
@@ -77,14 +92,13 @@ const controllerSearch = async (pagination = false) => {
 /*
 * MOVIE CONTROLLER
 */
-
 const controllerMovie = async (id) => {
+
     // Get's the id from the URL with a hash
     // const id = window.location.hash.replace("#", "");
     // history.pushState("", document.title, window.location.pathname);
     
     
-
     // Check if the URL have an id or not
     if (id) {
 
@@ -109,13 +123,10 @@ const controllerMovie = async (id) => {
             if(!state.watched || state.watched.movies.findIndex(el => el.imdbId === state.movie.id) === -1) {
                 // Render the new markup with the button not watched
                 movieView.renderMovie(state.movie, "-");
-                // console.log("-");
                 
             } else {
                 // Render the new markup with the button watched
-                movieView.renderMovie(state.movie, "+");
-                // console.log("+");
-                
+                movieView.renderMovie(state.movie, "+");                
             }
 
             
@@ -125,6 +136,7 @@ const controllerMovie = async (id) => {
             console.log(error);
         }
     } else {
+        // If the user doesn't select a movie, a alert will be displayed to the user to advise to select a movie
         alert('Select a movie!');
    }
     
@@ -133,8 +145,7 @@ const controllerMovie = async (id) => {
 /*
 * WATCHED CONTROLLER
 */
-
-const watchedController = () => {
+const controllerWatched = () => {
 
     // if the watched object is not on the state object, then create it
     if(!state.watched) state.watched = new Watched();
@@ -160,7 +171,6 @@ const watchedController = () => {
         movieView.renderButton("-");
 
     } else {
-        // console.log("add");
         // Insert a movie on the object state.watched
         // id, title, img, uptime, isWatched
         state.watched.insertNewMovie(state.movie.id, state.movie.title, state.movie.img, state.movie.runtime);
@@ -191,23 +201,16 @@ const init = () => {
   
         //   Render the movies list
         watchedView.renderResults(state.watched);
-
     }
-
-    // console.log(process.env.API_KEY);
-    // console.log(process.env.API_PROXY);
     
 
 /*
 * EVENT LISTENER
 */
-
 document.addEventListener('click', (e) => {
     // Event listener to ghost elements, elements that are not on the document after load
     // const query = e.target.parentNode.parentNode.className;
     // const backQuery = e.target.parentNode.className;    
-    
-    // console.log(btnQuery);
     
     try{
 
@@ -216,9 +219,8 @@ document.addEventListener('click', (e) => {
     if (query === eventsList.movie) {
         // const id = e.target.parentNode.parentNode.getAttribute("href").replace("#", "");
         const id = e.target.parentNode.parentNode.dataset.id;
-        // console.log(id);
-        
-        // console.log(id);
+
+        // Call the controllerMovie
         controllerMovie(id);
     } else if (query === eventsList.back) {
         //  Clean the movie HTML
@@ -253,13 +255,10 @@ document.addEventListener('click', (e) => {
         // Add a new movie or remove from the watched list
         
         
-        
-        watchedController();
-        // console.log(state.movie.runtime);
-        // watchedView.convertTime(state.watched.totalTimeWatched);
+        // Call the controllerWatched
+        controllerWatched();
     } else if (query === eventsList.watchedLink) {
         const id = e.target.closest("a").dataset.id;
-        // console.log(id);
 
         // Clean the results
         watchedView.cleanResultsContainer();
@@ -269,18 +268,17 @@ document.addEventListener('click', (e) => {
         
     }
 } catch (error) {
-    // console.log(error);
     
 }
-
-    // TODO Fix the static method of getting the data from the a tag - solution - closest
-    // TODO pagination could be improved in time
-    // TODO convert this else if in switch
 });
 
 
 document.addEventListener('submit', e => {
+    
+    // Prevent the page to reload on the submit form of search
     e.preventDefault();
+
+    // Call the controller Search
     controllerSearch();
 });
 

@@ -1,5 +1,15 @@
+// Watched view
+
+// Imports =====================================================
 import { elements } from './base';
 
+/*
+* WATCHED VIEW CONTROLS
+*/
+
+// ===== private methods =====
+
+// Render the markup to render the title
 const renderTitle = (uptime, time) => {
 
     if (time === 0) {
@@ -19,7 +29,7 @@ const renderTitle = (uptime, time) => {
     
 }
 
-
+// Render the markup to render the movies
 const renderMarkup = (id, img, title) => {
 
     if(img === "N/A") {
@@ -66,12 +76,11 @@ const renderMarkup = (id, img, title) => {
     }
 }
 
-// const renderImg = (img, title) => {
+// ===== Public methods =====
+// DOM MANIPULATIONS =====================================================
 
-// }
-
+// Function to divide the minutes into days, hours and minutes
 export const convertTime = (uptime) => {
-    // Function to divide the minutes into days, hours and minutes
 
     // Divide the minutes into hours
     const time = String(uptime / 60).split(".");
@@ -101,13 +110,10 @@ export const convertTime = (uptime) => {
 
 
     // Return the array
-    return arrTime;
-    
-    // TODO check this
-    
-    
+    return arrTime;    
 }
 
+// Render the resuts
 export const renderResults = (data) => {
 
     // Clean title and container
@@ -122,6 +128,7 @@ export const renderResults = (data) => {
     });  
 }
 
+// Clean the DOM
 export const cleanResults = () => {
 
     // Clean title
@@ -132,4 +139,5 @@ export const cleanResults = () => {
     
 }
 
+// Clean the section DOM
 export const cleanResultsContainer = () => elements.section.innerHTML = "";

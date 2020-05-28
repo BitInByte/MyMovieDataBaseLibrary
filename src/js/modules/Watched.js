@@ -1,9 +1,13 @@
+// class WATCHED =====================================================
 export default class Watched {
+
+    // Constructor =====================================================
     constructor () {
         this.movies = [];
         this.totalTimeWatched = 0;
     }
 
+    // Insert new movie on the watched list object
     insertNewMovie(id, title, img, uptime) {
         this.movies.push({
             imdbId: id,
@@ -11,29 +15,37 @@ export default class Watched {
             img: img,
         })
 
-        
+        // Add the movie runtime to the TotalTimeWatched object
         this.totalTimeWatched += this.convertUpTimeToInt(this.checkString(uptime));
 
         // Call data Persintent
         this.saveData();
     }
 
+    // Remove the movie from the watched list object
     removeNewMovie(id, uptime) {
 
+        // Remove the movie
         this.movies.splice(id, 1);
 
+        // Remove the uptime from the TotaTimeWatched
         this.totalTimeWatched -= this.convertUpTimeToInt(this.checkString(uptime));
 
          // Call data Persintent
          this.saveData();        
     }
     
+    // Convert the time that is a string into int
     convertUpTimeToInt(data) {
+
+        // Remove the min string from the uptime
         const divided = String(data).split(" ");
         
+        // Return the runtime int object
         return parseInt(divided[0]);        
     }
 
+    // Check if the runtime have time or not
     checkString(data) {
         if(data === "N/A"){
             return 0;

@@ -1,6 +1,6 @@
 // Movie view
 
-// Imports
+// Imports =====================================================
 import { elements } from './base';
 
 /*
@@ -8,8 +8,9 @@ import { elements } from './base';
 */
 
 // ===== private methods =====
+
+// Render the markup to render the movie page
 const renderMovieHTML = (title, released, director, imdbWebSite, rating, runtime, description, img, id) => {
-    // Render the markup
     const markup = `
     <div class="movie-content animate__animated animate__fadeIn">
         <div class="movie-content--img">
@@ -56,6 +57,8 @@ const renderMovieHTML = (title, released, director, imdbWebSite, rating, runtime
     elements.section.insertAdjacentHTML('afterbegin', markup);
 }
 
+
+// Render the image without img form
 const renderImage = (img, title) => {
     if(img === "N/A"){
         const markup = `
@@ -73,19 +76,16 @@ const renderImage = (img, title) => {
     }
 }
 
+// Function to rend the starts rating
 const renderStars = (rating) => {
-
-    // Function to render the star rating
 
     // Stars to markup
     const fullStar = '<i class="icon ion-ios-star"></i>';
     const halfStar = '<i class="icon ion-ios-star-half"></i>';
     const emptyStar = '<i class="icon ion-ios-star-outline"></i>';
 
-    // console.log(Math.floor(rating/2));
     // Imdb star convertion
     const starRating = String(rating/2).split(".");
-    // console.log(starRating);
 
     const star = parseInt(starRating[0]);
     const decimal = parseInt(starRating[1]);
@@ -104,8 +104,6 @@ const renderStars = (rating) => {
     // rest
     markup += emptyStar.repeat(5-totalstars);
 
-    // console.log(markup);
-
     // render markup    
     document.querySelector('.movie-content--stars').insertAdjacentHTML('afterbegin', markup);
 
@@ -114,8 +112,8 @@ const renderStars = (rating) => {
     
 }
 
+// Render the button when the movie is watched
 const renderBtnWatched = () => {
-    // Render the button when the movie is watched
 
     // markup
     const markup = `
@@ -129,8 +127,9 @@ const renderBtnWatched = () => {
     document.querySelector('.btn-watched--js').insertAdjacentHTML('afterbegin', markup);
 }
 
+
+// Render the button when the movie is not watched
 const renderBtnNotWatched = () => {
-    // Render the button when the movie is watched
 
     // markup
     const markup = `
@@ -145,6 +144,8 @@ const renderBtnNotWatched = () => {
 }
 
 // ===== Public methods =====
+
+// DOM MANIPULATIONS =====================================================
 export const renderMovie = (data, type) => {
     // Call the private method to render the markup with selected data
     renderMovieHTML(data.title, data.released, data.director, data.imdbWebSite, data.rating, data.runtime, data.description, data.img, data.id);
@@ -154,6 +155,7 @@ export const renderMovie = (data, type) => {
 }
 
 export const renderButton = (type) => {
+    // Call the render button method with the watch or not watch movie. It's selected by the type argument
     if(type === "+") {
         renderBtnWatched();
     } else {
@@ -163,5 +165,6 @@ export const renderButton = (type) => {
 }
 
 export const cleanMovie = () => {
+    // Clean the movie from the DOM
     elements.section.innerHTML = "";
 }

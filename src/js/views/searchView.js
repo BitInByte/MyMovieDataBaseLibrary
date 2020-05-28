@@ -1,13 +1,15 @@
 // Search view
 
-// Imports
+// Imports =====================================================
 import { elements } from './base';
 
 /*
 * SEACH VIEW CONTROLS
 */
 
-// private methods
+// ===== private methods =====
+
+// Render the markup to render the title
 const renderTitle = (title) => {
     const markup = `<h1 class="message-movies-animation">Result's with the "${title}" keyword: </h1>
                         <div class="movies-container">`
@@ -18,20 +20,10 @@ const renderTitle = (title) => {
     titleClass.classList.add('animate__animated', 'animate__backInDown');
 }
 
+// Render the markup to render the movie
 const renderMovie = (img, title, id) => {
 
-    if(img === "N/A"){
-    //     const markup = `
-    //         <div class="single-movie animate__animated animate__fadeIn">
-    //             <a class="single-movie--id" data-id="${id}">
-    //                 <div class="no--img">
-    //                     <p>${title}</p>
-    //                     <p>Sorry no image to present!</p>
-    //                 <div>
-    //             </a>
-    //         </div>
-    // `;
-    
+    if(img === "N/A"){    
         const markup = `
         <div class="single-movie animate__animated animate__fadeIn">
             <a class="single-movie--id" data-id="${id}">
@@ -64,9 +56,8 @@ const renderMovie = (img, title, id) => {
     
 } 
 
-const renderButtons = (currentPage, nextPage) => {
-    // console.log(currentPage);
-    
+// Render the markup to render the buttons
+const renderButtons = (currentPage, nextPage) => {    
     if (currentPage === 1) {
         const markup = `
             <div class="pagination">
@@ -117,7 +108,7 @@ const renderButtons = (currentPage, nextPage) => {
 
 
 
-// Public methods
+// ===== Public methods =====
 // GETS =====================================================
 
 // get value from the form
@@ -136,10 +127,7 @@ export const renderResults = (data) => {
 
     // Render each result
     data.result.slice().reverse().forEach(e => {
-        // Find the index on the array with a element value
-        // const index = data.result.findIndex((el) => el.Title === e.Title);
-        // console.log(index);
-        
+        // Find the index on the array with a element value        
         renderMovie(e.Poster, e.Title, e.imdbID);
     });
 
@@ -147,8 +135,5 @@ export const renderResults = (data) => {
     renderButtons(data.currentPage, data.nextPage);
 }
 
+// Clean the DOM
 export const cleanResults = () => elements.section.innerHTML = "";
-
-// export const cleanButtons = () => {
-
-// }

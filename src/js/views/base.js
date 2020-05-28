@@ -7,10 +7,12 @@ export const elements = {
     watchedMovieContainer: document.querySelector('.watched-panel--container'),
 }
 
+// Hash elements
 export const hashValues = {
     back: "BACK"
 }
 
+// Event listener elements
 export const eventsList = {
     movie: "single-movie--id",
     back: "movie-content--link",
@@ -30,14 +32,12 @@ export const renderLoader = (parent) => {
         </div>
         `;
 
-    // parent.insertAdjacentHTML("afterend", markup);
     elements.section.insertAdjacentHTML("afterbegin", markup);
 }
 
 export const clearLoader = () => {
+
     // Removes the loader
-    // const loader = document.querySelector('.loader--loader');
-    // if (loader) loader.parentElement.removeChild(loader);
     elements.section.innerHTML = "";
 
 }

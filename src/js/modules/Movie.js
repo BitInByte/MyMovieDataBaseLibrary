@@ -1,20 +1,30 @@
+// Simple movie async query fetch
+
+// Imports =====================================================
 import axios from "axios";
 
+// class MOVIE =====================================================
 export default class Movie {
+
+    // Constructor =====================================================
     constructor(id) {
         this.id = id;
     }
 
+    // Async function fetching an API =====================================================
     async getMovie() {
-        // const proxy = 'https://cors-anywhere.herokuapp.com/';
-        // const key = '460a78c7';
+
+        // Get proxy and key from an .env file
         const proxy = process.env.API_PROXY;
         const key = process.env.API_KEY;
 
+        // Error handler
         try {
 
+            // Results
             const result = await axios(`${proxy}http://www.omdbapi.com/?apikey=${key}&i=${this.id}&plot=full`);
-            // console.log(result);
+
+            // Storing results to the object
             this.title = result.data.Title;
             this.year = result.data.Year;
             this.runtime = result.data.Runtime;
