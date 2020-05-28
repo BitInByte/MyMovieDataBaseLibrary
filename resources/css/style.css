@@ -194,7 +194,7 @@ header form button i {
 
     color: #fafbfc;
     background-color: transparent !important;
-    font-size: 200%;
+    font-size: 200% !important;
 }
 
 .btn-watched-list {
