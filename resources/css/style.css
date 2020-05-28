@@ -197,6 +197,10 @@ header form button i {
     font-size: 400% !important;
 }
 
+.ion-md-search {
+    font-size: 100%;
+}
+
 .btn-watched-list {
     margin: 0;
     padding: 0;
