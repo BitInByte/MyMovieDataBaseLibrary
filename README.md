@@ -14,7 +14,7 @@ Step 1: Run the next script to create a live local server and build in dev mode 
 npm run start  
 ```
   
-Step 2: Buil the project to be ready to production
+Step 2: Buil the project to be ready for production
 
 ```
 npm run build  
@@ -25,7 +25,7 @@ The commands above need to be introduced on the root folder of the project.
 The project need an API key as well that you can get it free from the OMDB API. You just only need to change the api key on the models on the project.  
   
 ## Specifications
-Project build in study case. This project was made to apply a bunch of new technologies learned on the last couple of weeks. In terms of layout, the project is following the same rules than the last project, it's without flexbox or grid, is used with only floating elements and other old tricks. This project was really challenging because, layouting without flexbox or grid is really hard. Beside that, this project is using multiple versions of the Vanilla JavaScript the opposite of the last project that I only used the ES5 version. Another feature used was node.js that was implemented the webpack to bundle all of the javascript files in just one file, babel to convert all of code that was wrote with features not supported in ES5 to ES5 features and polyfill to use the code that is impossible to be converted into ES5 code.  
+Project build in study case. This project was made to apply a bunch of new technologies learned on the last couple of weeks. In terms of layout, the project is following the same rules than the last project, it's without flexbox or grid, is used with only floating elements and other old tricks. This project was really challenging because, layouting without flexbox or grid is really hard. Beside that, this project is using multiple versions of the Vanilla JavaScript the opposite of the last project that I only used the ES5 version. Another feature used was node.js that was implemented the webpack to bundle all of the javascript files in just one file, babel to convert all of code that was wrote with features not supported in ES5 to ES5 features and polyfill to use the code that is impossible to be converted into ES5 code. It's implemented persistent data on the watched list, you can pick all of the movies that you already saw and that information will always be there, unless you clear the cache of the browser.  
 ## Built With
 - HTML
 - CSS3
@@ -34,7 +34,7 @@ Project build in study case. This project was made to apply a bunch of new techn
 - NodeJs:
 	- webpack;
 	- babel;
-	- dontenv;  
+	- dotenv;  
 ## Contributing
 Feel free to download it and improve it. If you want just give a pull request with your changes and let me know what can be improved. Many thanks :D
 ## Pages
