@@ -345,7 +345,8 @@ header form button i {
 }
 
 
-.latest-movies h1 {
+.latest-movies h1,
+.content h1 {
     margin: 20px 0;
     padding-top: 5px;
 }
