@@ -1,7 +1,7 @@
 # My Movie DataBase Library  
-## [Check it here](https://bitinbyte.github.io/TicTacToe/)
+## [Check it here](https://bitinbyte.github.io/MyMovieDataBaseLibrary)
 ![Thumbnail](thumbnail.png)
-Thumbnail of the DataBase  
+Thumbnail of the DataBase Movie library 
 ## Getting Started
 The database is made with a free API that you can find here: [OMDB API](http://www.omdbapi.com/) - All credits on API to them.   
 ### Installing
