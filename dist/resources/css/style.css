@@ -353,7 +353,7 @@ header form button i {
 
 .single-movie {
     float: left;
-    width: 17%;
+    width: 18%;
     text-align: center;
     margin: 1%;
     margin-top: 15px;
@@ -389,10 +389,10 @@ header form button i {
 }
 
 .single-movie figure p {
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     margin: 0 auto;
     width: 75%;
-    height: 360px;
+    height: 340px;
     text-align: center;
     padding-top: 10%;
     box-shadow:  0px 0px 15px -3px #000, inset 0px 0px 46px -8px rgba(0, 0, 0, 1);
