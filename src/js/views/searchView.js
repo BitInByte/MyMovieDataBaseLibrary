@@ -11,7 +11,7 @@ import { elements } from './base';
 
 // Render the markup to render the title
 const renderTitle = (title) => {
-    const markup = `<h1 class="message-movies-animation">Result's with the "${title}" keyword: </h1>
+    const markup = `<h1 class="section--movie-search message-movies-animation">Result's with the "${title}" keyword: </h1>
                         <div class="movies-container">`
 
     elements.section.insertAdjacentHTML('afterbegin', markup);
