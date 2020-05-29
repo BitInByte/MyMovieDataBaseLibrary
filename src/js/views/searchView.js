@@ -60,6 +60,7 @@ const renderMovie = (img, title, id) => {
 const renderButtons = (currentPage, nextPage) => {    
     if (currentPage === 1) {
         const markup = `
+        <div class="reset"></div>
             <div class="pagination">
                 <a class="pagination--page-up" data-page="+">
                     <div class="btn btn-right">
@@ -73,6 +74,7 @@ const renderButtons = (currentPage, nextPage) => {
         document.querySelector('.movies-container').insertAdjacentHTML('afterend', markup);
     }  else if(nextPage === 0) {
         const markup = `
+        <div class="reset"></div>
             <div class="pagination">
             <a class="pagination--page-down" data-page="-">
                 <div class="btn btn-left">
@@ -86,6 +88,7 @@ const renderButtons = (currentPage, nextPage) => {
         document.querySelector('.movies-container').insertAdjacentHTML('afterend', markup);
     } else if (currentPage >= 1) {
         const markup = `
+        <div class="reset"></div>
             <div class="pagination">
                 <a class="pagination--page-up" data-page="+">
                     <div class="btn btn-right">
