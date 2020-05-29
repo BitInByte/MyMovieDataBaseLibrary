@@ -41,7 +41,7 @@ const renderMovie = (img, title, id) => {
             <div class="single-movie animate__animated animate__fadeIn">
                 <a class="single-movie--id" data-id="${id}">
                     <figure>
-                        <img src="${img}" alt="Deadpool" class="single-movie-img">
+                        <img src="${img}" alt="${title}" class="single-movie-img">
                         <figcaption>${title}</figcaption>
                     </figure>
                 </a>
